@@ -9,7 +9,7 @@
     android:background="#F0F0F0">
 
     <Button
-        android:id="@+id/decreaseKarraButton"
+        android:id="@+id/decreaseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -18,11 +18,11 @@
         android:text="@string/minus"
         android:textAlignment="center"
         android:textSize="50sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/amountKarra"
+        app:layout_constraintBaseline_toBaselineOf="@+id/amount"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/increaseKarraButton"
+        android:id="@+id/increaseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -35,11 +35,11 @@
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descKarra"
+        app:layout_constraintTop_toBottomOf="@+id/description"
         app:layout_constraintVertical_bias="0.104" />
 
     <ImageView
-        android:id="@+id/imageKarra"
+        android:id="@+id/pictureView"
         android:layout_width="308dp"
         android:layout_height="215dp"
         android:layout_marginStart="8dp"
@@ -49,11 +49,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priceKarra"
+        app:layout_constraintTop_toBottomOf="@+id/price_textview"
         app:srcCompat="@drawable/karra" />
 
     <TextView
-        android:id="@+id/amountKarra"
+        android:id="@+id/amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -63,13 +63,13 @@
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="50sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/increaseKarraButton"
-        app:layout_constraintEnd_toStartOf="@+id/increaseKarraButton"
+        app:layout_constraintBaseline_toBaselineOf="@+id/increaseButton"
+        app:layout_constraintEnd_toStartOf="@+id/increaseButton"
         app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toEndOf="@+id/decreaseKarraButton" />
+        app:layout_constraintStart_toEndOf="@+id/decreaseButton" />
 
     <TextView
-        android:id="@+id/nameKarra"
+        android:id="@+id/title_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/priceKarra"
+        android:id="@+id/price_textview"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -99,10 +99,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameKarra" />
+        app:layout_constraintTop_toBottomOf="@+id/title_textview" />
 
     <TextView
-        android:id="@+id/descKarra"
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -114,10 +114,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageKarra" />
+        app:layout_constraintTop_toBottomOf="@+id/pictureView" />
 
     <TextView
-        android:id="@+id/strSubtotalKarra"
+        android:id="@+id/strSubtotal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -126,12 +126,12 @@
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="30sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/subtotalKarra"
-        app:layout_constraintEnd_toStartOf="@+id/subtotalKarra"
+        app:layout_constraintBaseline_toBaselineOf="@+id/subtotal"
+        app:layout_constraintEnd_toStartOf="@+id/subtotal"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/subtotalKarra"
+        android:id="@+id/subtotal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -144,8 +144,8 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/strSubtotalKarra"
-        app:layout_constraintTop_toBottomOf="@+id/increaseKarraButton"
+        app:layout_constraintStart_toEndOf="@+id/strSubtotal"
+        app:layout_constraintTop_toBottomOf="@+id/increaseButton"
         app:layout_constraintVertical_bias="0.0" />
 
 
