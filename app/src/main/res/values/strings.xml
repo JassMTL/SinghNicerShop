@@ -1,4 +1,29 @@
 <resources>
-    <string name="app_name">SinghNicerShop</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">SinghShop</string>
+    <string name="pendant">Pendant</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="sarbloh_karra">Sarbloh Karra</string>
+    <string name="priceKarraStr">$25.00</string>
+    <string name="kirpan">Kirpan</string>
+    <string name="priceKirpanStr">$100.00</string>
+    <string name="pricePendant">$20.00</string>
+    <string name="library">Library</string>
+    <string name="proceed_to_checkout">Proceed To Checkout</string>
+    <string name="welcome_to_sikhaccesories">Welcome to SikhAccesories</string>
+    <string name="welcomeDesc">We specilize in Accesories that sikhs use on a daily basis</string>
+    <string name="start_shopping">Start Shopping</string>
+    <string name="before_tax">Before Tax:</string>
+    <string name="gst_tax">GST Tax:</string>
+    <string name="qst_tax">QST Tax:</string>
+    <string name="final_amount">Final Amount:</string>
+    <string name="thank_you">Thank You For Your Visiting SikhAccesories</string>
+    <string name="checkout">Checkout</string>
+    <string name="defaultNum">0</string>
+    <string name="descKarra">Karra is the Punjabi word for a metal bangle worn by Sikh males and females. Sarblow is a word that mean full metal</string>
+    <string name="totalStr">Total:</string>
+    <string name="subtotalStr">Subtotal:</string>
+    <string name="descriptionKirpan">Kirpan is a small dagger worn by baptised Sikh men and women. This particle kirpan is personized with a matt black finish.</string>
+    <string name="descriptionPendant">This Pendant is not a religious item. It is an ornament wit the chrest of the Khalsa.The chain s ajustible</string>
+    <string name="title_activity_menu">MenuActivity</string>
 </resources>
