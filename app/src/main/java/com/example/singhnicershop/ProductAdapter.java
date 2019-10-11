@@ -48,7 +48,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return mdata.size();
     }
 
-    public class ProductViewHolder extends RecyclerView.ViewHolder {
+    public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         final ProductAdapter mAdapter;
         TextView title_textView;
@@ -69,6 +69,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
             this.mAdapter = adapter;
             //itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+
         }
     }
 }
