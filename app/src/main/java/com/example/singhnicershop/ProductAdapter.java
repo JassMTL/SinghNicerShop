@@ -22,13 +22,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     //inflate the item layout and return a ViewHolder object
     public ProductAdapter.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
+        View mItemView = mInflater.inflate(R.layout.card1_content,viewGroup,false);
+        return new ProductViewHolder(mItemView, this);
     }
 
     // set the ViewHolder attributes based on the position of the item
     @Override
-    public void onBindViewHolder(@NonNull ProductAdapter.ProductViewHolder productViewHolder, int i) {
-
+    public void onBindViewHolder(@NonNull ProductAdapter.ProductViewHolder holder, int position) {
+        String mCurrent = mdata.get(position);
+        holder.wordItemView.setText(mCurrent);
     }
 
     //return the size of the data
@@ -40,8 +42,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     public class ProductViewHolder extends RecyclerView.ViewHolder {
 
-        public ProductViewHolder(@NonNull View itemView) {
+        int mPosition = getLayoutPosition();
+        String element = mdata.get(mPosition);
+        public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
             super(itemView);
+            this.mAdapter = adapter;
+            itemView.setOnClickListener(this);
         }
     }
 }

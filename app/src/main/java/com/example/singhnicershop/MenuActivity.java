@@ -57,6 +57,8 @@ public class MenuActivity extends AppCompatActivity {
         for(int i = 0; i < title.length;i++){
             new ShoppingItems(title[i],description[i],price[i],image[i],quantity);
         }
+
+
     }
 
 }
