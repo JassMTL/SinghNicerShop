@@ -13,7 +13,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.singhnicershop.model.ShoppingItems;
 
@@ -170,6 +174,37 @@ public class MenuActivity extends AppCompatActivity {
             mList.get(i).setSubtotal(test.get(j));
 
         }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        String montrealaddress = getString(R.string.montreal_location) +" :8350 jeanne-mance";
+        String torontoaddress = getString(R.string.toronto_location) + " :4725 Dixie Rd";
+        String vancouveraddress = getString(R.string.vancouver_location) + " :8350 jeanne-mance";
+        Toast toast;
+        switch (item.getItemId()) {
+            case R.id.montrealLocation:
+                toast = Toast.makeText(this, montrealaddress, Toast.LENGTH_SHORT);
+                toast.show();
+                return true;
+            case R.id.torontoLocation:
+                toast = Toast.makeText(this,torontoaddress, Toast.LENGTH_SHORT);
+                toast.show();
+                return true;
+            case R.id.vancouverLocation:
+                toast = Toast.makeText(this,vancouveraddress, Toast.LENGTH_SHORT);
+                toast.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 
 }

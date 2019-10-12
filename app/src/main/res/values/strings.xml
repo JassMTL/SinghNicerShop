@@ -27,4 +27,7 @@
     <string name="descriptionPendant">This Pendant is not a religious item. It is an ornament wit the chrest of the Khalsa.The chain s ajustible</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="shippingcost">ShippingCost</string>
+    <string name="montreal_location">Montreal Location</string>
+    <string name="toronto_location">Toronto Location</string>
+    <string name="vancouver_location">Vancouver Location</string>
 </resources>
