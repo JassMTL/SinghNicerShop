@@ -12,7 +12,13 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity">
+
+            </meta-data>
+        </activity>
         <activity android:name=".CheckoutActivity" />
         <activity
             android:name=".MainActivity"

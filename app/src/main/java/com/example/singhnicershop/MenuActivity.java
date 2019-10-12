@@ -6,6 +6,7 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,7 +27,7 @@ public class MenuActivity extends AppCompatActivity {
     private final LinkedList<ShoppingItems> mList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private ProductAdapter mAdapter;
-    int shippingCost = 0;
+    double shippingCost = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,8 @@ public class MenuActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +109,7 @@ public class MenuActivity extends AppCompatActivity {
         String quantity = getResources().getString(R.string.defaultNum);
         String subtotal = getResources().getString(R.string.defaultNum);
 
+        Log.d("lenght",""+title.length);
         for(int i = 0; i < title.length;i++){
             mList.add(new ShoppingItems(title[i],description[i],price[i],image[i],quantity,subtotal));
         }
@@ -123,11 +127,13 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public  void gotoCheckout(){
-        int totalSubtotal = 0;
+        double totalSubtotal = 0;
         for (int i = 0; i < mList.size();i++){
             totalSubtotal += Double.parseDouble(mList.get(i).getSubtotal());
         }
         Intent intent = new Intent(this, CheckoutActivity.class);
+        Log.d("lenght",""+totalSubtotal);
+
         intent.putExtra(SHIPPINGTAG, shippingCost);
         intent.putExtra(SUBTOTALTAG, totalSubtotal);
         startActivity(intent);
