@@ -1,11 +1,15 @@
 package com.example.singhnicershop;
 
 import android.content.Context;
+import android.nfc.Tag;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +21,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @NonNull
     private LayoutInflater mInflater;
     private final LinkedList<ShoppingItems> mdata;
+    private static final String TAG = "com.example.android.singhnicershop";
 
     public ProductAdapter(Context context, LinkedList<ShoppingItems> list) {
             mInflater = LayoutInflater.from(context);
@@ -39,6 +44,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.description_textView.setText(mCurrent.getDescription());
         holder.price_textView.setText(mCurrent.getPrice());
         holder.quantity_textView.setText(mCurrent.getQuantity());
+        holder.subtotal_textView.setText(mCurrent.getSubtotal());
     }
 
     //return the size of the data
@@ -56,23 +62,60 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         TextView description_textView;
         TextView quantity_textView;
         ImageView image;
+        TextView subtotal_textView;
+        Button increase;
+        Button decrease;
+        CardView cardView;
         int mPosition = getLayoutPosition();
         //String element = mdata.get(mPosition);
 
         public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
             super(itemView);
+            this.mAdapter = adapter;
+
+            cardView = itemView.findViewById(R.id.cardView);
+
             title_textView = itemView.findViewById(R.id.title_textview);
             price_textView = itemView.findViewById(R.id.price_textview);
             description_textView = itemView.findViewById(R.id.description);
             quantity_textView = itemView.findViewById(R.id.amount);
             image = itemView.findViewById(R.id.pictureView);
+            subtotal_textView = itemView.findViewById(R.id.subtotal);
 
-            this.mAdapter = adapter;
+            increase = itemView.findViewById(R.id.increaseButton);
+            decrease = itemView.findViewById(R.id.decreaseButton);
+
+
+
+            increase.setOnClickListener(this);
+            decrease.setOnClickListener(this);
             //itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
+
+            int position = getLayoutPosition();
+            ShoppingItems sample = mdata.get(position);
+            int quantity = Integer.parseInt(sample.getQuantity());
+            double price = Double.parseDouble(sample.getPrice().substring(1));
+
+            switch (v.getId()){
+                case R.id.increaseButton:
+                    quantity++;
+                    Log.d(TAG,"Increased pressed");
+                    break;
+                case R.id.decreaseButton:
+                    if(quantity > 0)
+                        quantity--;
+                    Log.d(TAG,"Decrease pressed");
+                    break;
+            }
+
+            double subtotal = quantity*price;
+            sample.setQuantity(""+quantity);
+            sample.setSubtotal(""+subtotal);
+            mAdapter.notifyDataSetChanged();
 
         }
     }

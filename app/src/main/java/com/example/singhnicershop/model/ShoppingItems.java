@@ -6,17 +6,27 @@ public class ShoppingItems {
     String price;
     int image;
     String quantity;
+    String subtotal;
 
-    public ShoppingItems(String title,String description,String price,int image,String quantity){
+    public ShoppingItems(String title,String description,String price,int image,String quantity,String subtotal){
         this.title = title;
         this.description = description;
         this.price = price;
         this.image = image;
         this.quantity = quantity;
+        this.subtotal = subtotal;
     }
 
     public String getTitle() {
         return title;
+    }
+
+    public String getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(String subtotal) {
+        this.subtotal = subtotal;
     }
 
     public void setTitle(String title) {
