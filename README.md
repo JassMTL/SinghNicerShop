@@ -40,3 +40,7 @@ https://www.exportersindia.com/singh-suppliers-company5948287/gatra-4400783.htm
 https://www.amazon.in/Unique-Mens-Punjabi-Juti-Black/dp/B01N8XEBD2
 
 
+
+I was told to think up some menu ideas. According to my research. You have popup, contextual. The menu type is usually on the top. I is used for searching or editing the applications. I think i will use this fto display the address of the warehouses for each cities. A contextual Menu is used when you long press an item. I might use it too specify the size for some of myproduct.
+
+
