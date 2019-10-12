@@ -27,10 +27,12 @@ public class MenuActivity extends AppCompatActivity {
     private final LinkedList<ShoppingItems> mList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private ProductAdapter mAdapter;
-    double shippingCost = 0;
+    double shippingCost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        shippingCost = 0;
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -54,9 +56,9 @@ public class MenuActivity extends AppCompatActivity {
                         switch (position){
                             case 0: shippingCost += 50;
                             break;
-                            case 1: shippingCost += 50;
+                            case 1: shippingCost += 10;
                             break;
-                            case 2: shippingCost += 50;
+                            case 2: shippingCost += 0;
                             break;
 
                         }
@@ -132,7 +134,7 @@ public class MenuActivity extends AppCompatActivity {
             totalSubtotal += Double.parseDouble(mList.get(i).getSubtotal());
         }
         Intent intent = new Intent(this, CheckoutActivity.class);
-        Log.d("lenght",""+totalSubtotal);
+        Log.d("lenght",""+shippingCost);
 
         intent.putExtra(SHIPPINGTAG, shippingCost);
         intent.putExtra(SUBTOTALTAG, totalSubtotal);

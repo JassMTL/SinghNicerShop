@@ -12,6 +12,7 @@ public class CheckoutActivity extends AppCompatActivity {
     private TextView showGst;
     private TextView showQst;
     private TextView showFinalPrice;
+    private TextView showShipping;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +22,6 @@ public class CheckoutActivity extends AppCompatActivity {
 
         double subtotal = intent.getDoubleExtra(MenuActivity.SUBTOTALTAG,0);
         double shipping = intent.getDoubleExtra(MenuActivity.SHIPPINGTAG,0);
-        //String subtotalStr = intent.getStringExtra(MenuActivity.SUBTOTALTAG,0);
-        //String shippingStr =intent.getStringExtra(MenuActivity.SHIPPINGTAG);
 
         Log.d("subtotal",""+subtotal);
         showTax(subtotal,shipping);
@@ -33,15 +32,19 @@ public class CheckoutActivity extends AppCompatActivity {
         showGst = (TextView) findViewById(R.id.valGst);
         showQst = (TextView) findViewById(R.id.valQst);
         showFinalPrice = (TextView) findViewById(R.id.valFinal);
+        showShipping = (TextView) findViewById(R.id.valShipping);
 
-        double valueGst = subtotal * 0.05;
-        double valueQst = subtotal * 0.09975;
-        double finalPrice = subtotal + valueGst + valueQst;
+        //subtotal +=shipping;
+        double finalSubtotal = subtotal + shipping;
+        double valueGst = finalSubtotal * 0.05;
+        double valueQst = finalSubtotal * 0.09975;
+        double finalPrice = finalSubtotal + valueGst + valueQst;
 
         showSubtotal.setText(String.format("$%.2f",subtotal));
         showGst.setText(String.format("$%.2f",valueGst));
         showQst.setText(String.format("$%.2f",valueQst));
         showFinalPrice.setText(String.format("$%.2f",finalPrice));
+        showShipping.setText(String.format("$%.2f",shipping));
     }
 }
 

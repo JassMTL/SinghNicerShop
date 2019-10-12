@@ -26,4 +26,5 @@
     <string name="descriptionKirpan">Kirpan is a small dagger worn by baptised Sikh men and women. This particle kirpan is personized with a matt black finish.</string>
     <string name="descriptionPendant">This Pendant is not a religious item. It is an ornament wit the chrest of the Khalsa.The chain s ajustible</string>
     <string name="title_activity_menu">MenuActivity</string>
+    <string name="shippingcost">ShippingCost</string>
 </resources>

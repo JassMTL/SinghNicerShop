@@ -66,30 +66,26 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         Button increase;
         Button decrease;
         CardView cardView;
-        int mPosition = getLayoutPosition();
-        //String element = mdata.get(mPosition);
+        //int mPosition = getLayoutPosition();
+        int mPosition;
 
         public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
             super(itemView);
             this.mAdapter = adapter;
 
             cardView = itemView.findViewById(R.id.cardView);
-
             title_textView = itemView.findViewById(R.id.title_textview);
             price_textView = itemView.findViewById(R.id.price_textview);
             description_textView = itemView.findViewById(R.id.description);
             quantity_textView = itemView.findViewById(R.id.amount);
             image = itemView.findViewById(R.id.pictureView);
             subtotal_textView = itemView.findViewById(R.id.subtotal);
-
             increase = itemView.findViewById(R.id.increaseButton);
             decrease = itemView.findViewById(R.id.decreaseButton);
-
-
+            int mPosition = getLayoutPosition();
 
             increase.setOnClickListener(this);
             decrease.setOnClickListener(this);
-            //itemView.setOnClickListener(this);
         }
 
         @Override
@@ -103,12 +99,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             switch (v.getId()){
                 case R.id.increaseButton:
                     quantity++;
-                    Log.d(TAG,"Increased pressed");
+                    Log.d(TAG,"Increase pressed, "+sample.getTitle() +", "+ sample.getPrice());
                     break;
                 case R.id.decreaseButton:
                     if(quantity > 0)
                         quantity--;
-                    Log.d(TAG,"Decrease pressed");
+                    Log.d(TAG,"Decrease pressed, "+sample.getTitle() +", "+ sample.getPrice());
                     break;
             }
 

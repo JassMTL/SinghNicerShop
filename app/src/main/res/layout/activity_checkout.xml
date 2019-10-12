@@ -12,7 +12,7 @@
         android:layout_width="168dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:background="#F0F0F0"
         android:ems="10"
         android:text="@string/gst_tax"
@@ -22,14 +22,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strBeforeTax" />
+        app:layout_constraintTop_toBottomOf="@+id/strPlusShipping" />
 
     <TextView
         android:id="@+id/strFinal"
         android:layout_width="168dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:background="#F0F0F0"
         android:ems="10"
         android:text="@string/final_amount"
@@ -46,7 +46,7 @@
         android:layout_width="168dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="30dp"
         android:background="#F0F0F0"
         android:ems="10"
         android:text="@string/before_tax"
@@ -57,6 +57,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkoutMessage" />
+
+    <TextView
+        android:id="@+id/strPlusShipping"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="64dp"
+        android:background="#F0F0F0"
+        android:ems="10"
+        android:text="@string/shippingcost"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/strBeforeTax" />
 
     <TextView
         android:id="@+id/checkoutMessage"
@@ -98,7 +115,7 @@
         android:layout_width="168dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:background="#F0F0F0"
         android:ems="10"
         android:text="@string/qst_tax"
@@ -114,7 +131,7 @@
         android:id="@+id/valBeforeTax"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:background="#F0F0F0"
         android:text="@string/defaultNum"
@@ -127,10 +144,26 @@
         app:layout_constraintTop_toBottomOf="@+id/checkoutMessage" />
 
     <TextView
+        android:id="@+id/valShipping"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="20dp"
+        android:background="#F0F0F0"
+        android:text="@string/defaultNum"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/strBeforeTax"
+        app:layout_constraintTop_toBottomOf="@+id/valBeforeTax" />
+
+    <TextView
         android:id="@+id/valGst"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="20dp"
         android:background="#F0F0F0"
         android:text="@string/defaultNum"
@@ -139,13 +172,13 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/strGst"
-        app:layout_constraintTop_toBottomOf="@+id/valBeforeTax" />
+        app:layout_constraintTop_toBottomOf="@+id/valShipping" />
 
     <TextView
         android:id="@+id/valQst"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="20dp"
         android:background="#F0F0F0"
         android:text="@string/defaultNum"
@@ -160,7 +193,7 @@
         android:id="@+id/valFinal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="20dp"
         android:background="#F0F0F0"
         android:text="@string/defaultNum"
