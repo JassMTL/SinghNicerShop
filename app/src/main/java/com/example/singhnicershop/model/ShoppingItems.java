@@ -1,6 +1,7 @@
 package com.example.singhnicershop.model;
 
 public class ShoppingItems {
+    //variables for every textview in content
     String title;
     String description;
     String price;
@@ -8,6 +9,7 @@ public class ShoppingItems {
     String quantity;
     String subtotal;
 
+    //constructor
     public ShoppingItems(String title,String description,String price,int image,String quantity,String subtotal){
         this.title = title;
         this.description = description;
@@ -17,6 +19,7 @@ public class ShoppingItems {
         this.subtotal = subtotal;
     }
 
+    //get set
     public String getTitle() {
         return title;
     }

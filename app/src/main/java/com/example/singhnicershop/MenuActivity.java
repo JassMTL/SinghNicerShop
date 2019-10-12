@@ -44,17 +44,16 @@ public class MenuActivity extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-
+//shows the shipping price and links to checkiout
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 final String [] options = {"express($50)","regular($10)","no hurry(no cost)"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
                 builder.setTitle("Choose Shipping option");
-
                 int checkedItem = -1;
-
                 builder.setSingleChoiceItems(options, checkedItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int position) {
@@ -65,7 +64,6 @@ public class MenuActivity extends AppCompatActivity {
                             break;
                             case 2: shippingCost += 0;
                             break;
-
                         }
                     }
                 });
@@ -88,6 +86,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        //all the informations about view
 
         String [] title = {
                 getResources().getString(R.string.sarbloh_karra),
@@ -150,6 +149,7 @@ public class MenuActivity extends AppCompatActivity {
         String quantity = getResources().getString(R.string.defaultNum);
         String subtotal = getResources().getString(R.string.defaultNum);
 
+        //adds to list witht he help of shoppingitems class
         Log.d("lenght",""+title.length);
         for(int i = 0; i < title.length;i++){
             mList.add(new ShoppingItems(title[i],description[i],price[i],image[i],quantity,subtotal));
@@ -167,6 +167,7 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    //calculates subtotal and sends total and shipping to checkout
     public  void gotoCheckout(){
         double totalSubtotal = 0;
         for (int i = 0; i < mList.size();i++){
@@ -178,10 +179,6 @@ public class MenuActivity extends AppCompatActivity {
         intent.putExtra(SHIPPINGTAG, shippingCost);
         intent.putExtra(SUBTOTALTAG, totalSubtotal);
         startActivity(intent);
-    }
-
-    protected void onCreateOptionsMenu(Bundle savedInstanceState) {
-
     }
     protected void onSaveInstanceState(Bundle savedInstanceState) {
 
@@ -217,11 +214,12 @@ public class MenuActivity extends AppCompatActivity {
         return true;
     }
 
+    //Information about the menu
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         String montrealaddress = getString(R.string.montreal_location) +" :8350 jeanne-mance";
         String torontoaddress = getString(R.string.toronto_location) + " :4725 Dixie Rd";
-        String vancouveraddress = getString(R.string.vancouver_location) + " :8350 jeanne-mance";
+        String vancouveraddress = getString(R.string.vancouver_location) + " :1716 Willy avenue";
         Toast toast;
         switch (item.getItemId()) {
             case R.id.montrealLocation:

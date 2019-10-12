@@ -54,6 +54,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return mdata.size();
     }
 
+    //registers the clicks
     public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         final ProductAdapter mAdapter;
@@ -91,6 +92,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         @Override
         public void onClick(View v) {
 
+            //registere what button is clicked
             int position = getLayoutPosition();
             ShoppingItems sample = mdata.get(position);
             int quantity = Integer.parseInt(sample.getQuantity());
