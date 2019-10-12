@@ -32,6 +32,7 @@ public class MenuActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private ProductAdapter mAdapter;
     double shippingCost;
+    int size;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,26 +92,60 @@ public class MenuActivity extends AppCompatActivity {
         String [] title = {
                 getResources().getString(R.string.sarbloh_karra),
                 getResources().getString(R.string.kirpan),
-                getResources().getString(R.string.pendant)
+                getResources().getString(R.string.pendant),
+                getResources().getString(R.string.titleBaj),
+                getResources().getString(R.string.titlefiftee),
+
+                getResources().getString(R.string.titlewax),
+                getResources().getString(R.string.titlecomb),
+                getResources().getString(R.string.titlechola),
+                getResources().getString(R.string.titlegatra),
+                getResources().getString(R.string.titlejutti)
         };
 
         String [] description = {
                 getResources().getString(R.string.descKarra),
                 getResources().getString(R.string.descriptionKirpan),
-                getResources().getString(R.string.descriptionPendant)
+                getResources().getString(R.string.descriptionPendant),
+                getResources().getString(R.string.descBaj),
+                getResources().getString(R.string.descfiftee),
+
+                getResources().getString(R.string.descwax),
+                getResources().getString(R.string.desccomb),
+                getResources().getString(R.string.descchola),
+                getResources().getString(R.string.descgatra),
+                getResources().getString(R.string.descjutti)
         };
 
         String [] price = {
                 getResources().getString(R.string.priceKarraStr),
                 getResources().getString(R.string.priceKirpanStr),
-                getResources().getString(R.string.pricePendant)
+                getResources().getString(R.string.pricePendant),
+                getResources().getString(R.string.priceBaj),
+                getResources().getString(R.string.pricefiftee),
+
+                getResources().getString(R.string.pricewax),
+                getResources().getString(R.string.pricecomb),
+                getResources().getString(R.string.pricechola),
+                getResources().getString(R.string.pricegatra),
+                getResources().getString(R.string.pricejutti)
         };
 
         int [] image = {
                 R.drawable.karra,
                 R.drawable.kirpan,
-                R.drawable.khanda
+                R.drawable.khanda,
+                R.drawable.baj,
+                R.drawable.fiftee,
+
+                R.drawable.wax,
+                R.drawable.comb,
+                R.drawable.chola,
+                R.drawable.gatra,
+                R.drawable.jutti
         };
+        size = title.length;
+        Log.d("size",""+size);
 
         String quantity = getResources().getString(R.string.defaultNum);
         String subtotal = getResources().getString(R.string.defaultNum);
@@ -152,7 +187,7 @@ public class MenuActivity extends AppCompatActivity {
 
         super.onSaveInstanceState(savedInstanceState);
         ArrayList<String> test = new ArrayList<>();
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < size; i++){
             test.add(mList.get(i).getQuantity());
             test.add(mList.get(i).getSubtotal());
         }
@@ -166,11 +201,11 @@ public class MenuActivity extends AppCompatActivity {
 
         Log.d("Checker",test.get(0));
 
-        for(int i = 0,j = 0; i < 3; i++,j+=2){
+        for(int i = 0,j = 0; i < size; i++,j+=2){
             mList.get(i).setQuantity(test.get(j));
 
         }
-        for(int i = 0,j = 1; i < 3; i++,j+=2){
+        for(int i = 0,j = 1; i < size; i++,j+=2){
             mList.get(i).setSubtotal(test.get(j));
 
         }

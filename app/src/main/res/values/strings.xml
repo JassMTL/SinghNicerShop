@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SinghShop</string>
+    <string name="app_name">SinghNicerShop</string>
     <string name="pendant">Pendant</string>
     <string name="minus">-</string>
     <string name="plus">+</string>
@@ -30,4 +30,37 @@
     <string name="montreal_location">Montreal Location</string>
     <string name="toronto_location">Toronto Location</string>
     <string name="vancouver_location">Vancouver Location</string>
+
+    <string name="titleBaj">Baj</string>
+    <string name="descBaj">A baj is a metal stick used to tuck in loose hair for turban tyers.</string>
+    <string name="priceBaj">$5.00</string>
+
+    <string name="titlefiftee">Fiftee</string>
+    <string name="descfiftee">A fiftee is a strip of cloth worn under turbans.</string>
+    <string name="pricefiftee">$5.00</string>
+
+
+
+
+
+
+    <string name="titlewax">Moustash Wax</string>
+    <string name="descwax">This wax is used to control your frizzy moustash.</string>
+    <string name="pricewax">$5.00</string>
+
+    <string name="titlecomb">Wooden Comb</string>
+    <string name="desccomb">All baptized sikhs are required to have a comb on them at all times.</string>
+    <string name="pricecomb">$9.00</string>
+
+    <string name="titlechola">Blue Chola</string>
+    <string name="descchola">A Chola is a traditional sikh atire.</string>
+    <string name="pricechola">$45.00</string>
+
+    <string name="titlegatra">Gatra</string>
+    <string name="descgatra">Gatra is like a holster for your kirpan.</string>
+    <string name="pricegatra">$25.00</string>
+
+    <string name="titlejutti">Jutti</string>
+    <string name="descjutti">This is a tradition indain foot attire.</string>
+    <string name="pricejutti">$35.00</string>
 </resources>
